@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: auto;
+
+        }
+
+        /* 圆心 */
+        .circle-point {
+            position: absolute;
+            z-index: 3;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 100px;
+            height: 100px;
+        }
+
+        .circle-point img {
+            display: block;
+            width: 100%;
+            border-radius: 50%;
+        }
+
+
+        @keyframes scaleAnt {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(100%);
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleHeader {
+            0% {
+                transform: scale(1) rotate(-270deg);
+            }
+
+            50% {
+                transform: scale(1.2) rotate(-270deg);
+
+            }
+
+            100% {
+                transform: scale(1) rotate(-270deg);
+            }
+        }
+
+        @keyframes myRotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+
+            100% {
+                transform: rotate(270deg);
+            }
+        }
+
+        @keyframes antMyRotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+
+
+            100% {
+                transform: rotate(-270deg);
+            }
+        }
+
+        @keyframes showPopup {
+            0% {
+                width: 0px;
+                opacity: 0;
+                border: 1px solid purple;
+            }
+
+            100% {
+                width: 100px;
+                height: 100%;
+                opacity: 1;
+                border: 1px solid purple;
+
+            }
+        }
+
+        .rotate-box {
+            animation: scaleAnt 1s linear 0s 1;
+        }
+
+        .small-circle {
+            display: block;
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            border-radius: 50%;
+            position: relative;
+            border: 2px solid orange;
+            transform-origin: 50%;
+            animation-fill-mode: forwards;
+            animation: myRotate 6s linear 0s 1 forwards;
+        }
+
+        .img-rotate-layer {
+            position: absolute;
+            left: -30px;
+            top: -10px;
+            animation-fill-mode: forwards;
+            animation: antMyRotate 6s linear 0s 1 forwards, scaleHeader 400ms linear 6s 1 forwards;
+        }
+
+        .normal-rotate-layer {
+            position: absolute;
+            left: -17px;
+            top: -10px;
+            animation-fill-mode: forwards;
+            animation: antMyRotate 6s linear 0s 1 forwards, scaleHeader 400ms linear 6s 1 forwards;
+        }
+
+        .point-item {
+            position: absolute;
+            width: 100px;
+            height: 30px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            transform-origin: right;
+        }
+
+        /* 点的起始位置 */
+        .img-point-item {
+            transform: rotate(90deg);
+        }
+
+        .normal-point-item {
+            position: absolute;
+            transform-origin: right;
+        }
+
+        .normal-point-item span {
+            position: absolute;
+            left: -5px;
+            animation: antMyRotate 6s linear 0s 1 forwards;
+        }
+
+        .normal-point-item .normal-point-text1 {
+            position: absolute;
+            left: -20px;
+            top: 10px;
+        }
+
+        /* 点的起始位置 */
+
+
+
+        .normal-point-item span {
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: orange;
+            position: absolute;
+            left: -5px;
+
+        }
+
+        .img-point img {
+            display: block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .img-point .info-popup {
+            /* display:block; */
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            bottom: -30px;
+            color: orange;
+            font-size: 14px;
+            overflow: hidden;
+            border-radius: 5px;
+            animation-fill-mode: forwards;
+            animation: showPopup 300ms linear 6500ms 1 forwards;
+        }
+
+        .img-point .info-popup p {
+            line-height: 20px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .point-text {
+            top: 0px;
+            left: 0px;
+            bottom: 0;
+            font-size: 12px;
+            color: orange;
+            display: block;
+            width: 40px;
+            text-align: center;
+        }
+
+        .img-point1 {
+            transform: rotate(-90deg);
+        }
+
+        .normal-point1 {
+            transform: rotate(-180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="rotate-box">
+            <div class="small-circle">
+                <div class="point-item img-point-item">
+                    <div class="img-rotate-layer">
+                        <div class="img-point img-point1">
+                            <img src="./user.jpg" alt="">
+                            <i class="point-text">78天</i>
+                            <div class="info-popup">
+                                <p class="info-popupnickname">张三</p>
+                                <p class="info-popup-id">1100000</p>
+                                <p class="info-popup-duration-title">开通时间</p>
+                                <p class="open-duration">134天</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="point-item normal-point-item">
+                    <span><i class="point-text normal-point-text1">78天</i></span>
+                </div>
+            </div>
+        </div>
+        <div class="circle-point">
+            <img src="../point.jpg">
+        </div>
+    </div>
+</body>
+
+</html>

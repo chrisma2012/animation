@@ -1,0 +1,240 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+}
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    background-color: black;
+}
+
+/* 圆心 */
+.circle-point {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+}
+
+.circle-point img {
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+}
+@keyframes scaleCircle {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(100%);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleHeader {
+    0% {
+        transform: scale(1) rotate(-360deg);
+    }
+
+    50% {
+        transform: scale(1.2) rotate(-360deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(-360deg);
+    }
+}
+
+@keyframes myRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes antMyRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes showPopup {
+    0% {
+        width: 0px;
+        opacity: 0;
+        border: 1px solid purple;
+    }
+
+    100% {
+        width: 100px;
+        height: 100%;
+        opacity: 1;
+        border: 1px solid purple;
+    }
+}
+
+.rotate-box {
+    animation: scaleCircle 1s linear 0s 1;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.small-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    border-radius: 50%;
+    border: 2px solid orange;
+    transform-origin: 50%;
+    animation-fill-mode: forwards;
+    animation: myRotate 32s linear 0s infinite forwards;
+}
+
+.img-rotate-layer {
+    position: absolute;
+    left: -30px;
+    top: -10px;
+    animation-fill-mode: forwards;
+    animation: antMyRotate 32s linear 0s infinite forwards;
+}
+
+.normal-rotate-layer {
+    position: absolute;
+    left: -17px;
+    top: -10px;
+    animation-fill-mode: forwards;
+    animation: antMyRotate 32s linear 0s infinite forwards;
+}
+
+.point-item {
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transform-origin: right;
+}
+
+/* 点的起始位置 */
+.img-point-item {
+    transform: rotate(90deg);
+}
+
+.normal-point-item {
+    position: absolute;
+    transform-origin: right;
+}
+
+.normal-point-item span {
+    position: absolute;
+    left: -5px;
+    animation: antMyRotate 32s linear 0s infinite forwards;
+}
+
+.normal-point-item .normal-point-text1 {
+    position: absolute;
+    left: -20px;
+    top: 10px;
+}
+
+/* 点的起始位置 */
+
+.normal-point-item span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: orange;
+    position: absolute;
+    left: -5px;
+}
+.img-point {
+    position: relative;
+}
+.img-point img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.img-point .info-popup {
+    /* display:block; */
+    position: absolute;
+    left: 0;
+    top: -100px;
+    bottom: 0px;
+    width: 100px;
+    height: 100px;
+    z-index: 99;
+    color: orange;
+    font-size: 12px;
+    overflow: hidden;
+    border-radius: 5px;
+    animation-fill-mode: forwards;
+    border: 1px solid purple;
+    background-color: lightgrey;
+}
+
+.img-point .info-popup p {
+    line-height: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.point-text {
+    position: absolute;
+    left: -20px;
+    top: 10px;
+    bottom: 0;
+    font-size: 12px;
+    color: orange;
+    display: block;
+    width: 40px;
+    text-align: center;
+}
+
+.big-circle {
+    display: block;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    border: 2px solid orange;
+    transform-origin: 50%;
+    animation-fill-mode: forwards;
+    animation: myRotate 32s linear 0s infinite forwards;
+}
