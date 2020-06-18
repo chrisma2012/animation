@@ -21,8 +21,8 @@ html {
     right: 0;
     bottom: 0;
     margin: auto;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
 }
 
 .circle-point img {
@@ -34,11 +34,13 @@ html {
     0% {
         transform: scale(0);
         opacity: 0;
+        visibility: visible;
     }
 
     100% {
         transform: scale(100%);
         opacity: 1;
+        visibility: visible;
     }
 }
 
@@ -92,13 +94,15 @@ html {
 }
 
 .rotate-box {
-    animation: scaleCircle 1s linear 0s 1;
+    animation-fill-mode: forwards;
+    animation: scaleCircle 1s linear 2s 1 forwards;
     position: relative;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     margin: auto;
+    visibility: hidden;
 }
 
 .small-circle {
@@ -116,7 +120,7 @@ html {
     border: 2px solid orange;
     transform-origin: 50%;
     animation-fill-mode: forwards;
-    animation: myRotate 32s linear 0s infinite forwards;
+    animation: myRotate 32s linear 2s infinite forwards;
 }
 
 .img-rotate-layer {
@@ -124,7 +128,7 @@ html {
     left: -30px;
     top: -10px;
     animation-fill-mode: forwards;
-    animation: antMyRotate 32s linear 0s infinite forwards;
+    animation: antMyRotate 32s linear 2s infinite forwards;
 }
 
 .normal-rotate-layer {
@@ -132,7 +136,7 @@ html {
     left: -17px;
     top: -10px;
     animation-fill-mode: forwards;
-    animation: antMyRotate 32s linear 0s infinite forwards;
+    animation: antMyRotate 32s linear 2s infinite forwards;
 }
 
 .point-item {
@@ -158,15 +162,9 @@ html {
 .normal-point-item span {
     position: absolute;
     left: -5px;
-    animation: antMyRotate 32s linear 0s infinite forwards;
+    animation: antMyRotate 32s linear 2s infinite forwards;
 }
-
-.normal-point-item .normal-point-text1 {
-    position: absolute;
-    left: -20px;
-    top: 10px;
-}
-
+ 
 /* 点的起始位置 */
 
 .normal-point-item span {
@@ -177,6 +175,12 @@ html {
     background-color: orange;
     position: absolute;
     left: -5px;
+}
+.normal-point-item span  p{
+    display: block;
+    width: 35px;
+    height: 30px;
+    text-align: right;
 }
 .img-point {
     position: relative;
@@ -212,6 +216,14 @@ html {
     padding: 0;
     margin: 0;
 }
+.img-point .point-text{
+    top: 55px;
+    display: block;
+    width: 100%;
+    height: 30px;
+    text-align: right;
+    left: -8px;
+}
 
 .point-text {
     position: absolute;
@@ -236,5 +248,5 @@ html {
     border: 2px solid orange;
     transform-origin: 50%;
     animation-fill-mode: forwards;
-    animation: myRotate 32s linear 0s infinite forwards;
+    animation: myRotate 32s linear 2s infinite forwards;
 }

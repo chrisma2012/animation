@@ -3,7 +3,7 @@
     <div class="img-rotate-layer" :style="{animationPlayState: props.aniStatus ? 'running':'paused'}">
       <div class="img-point" :style="{transform:`rotate(-${props.startDeg}deg)`}" @click="props.clickEvent">
         <img src="../img/user.jpg" />
-        <i class="point-text">{{props.days}}天</i>
+        <div class="point-text">{{props.days}}天</div>
         <div class="info-popup" :style="!props.aniStatus ? {display:'block'}:{display:'none'}">
           <p class="info-popupnickname">张三</p>
           <p class="info-popup-id">1100000</p>
